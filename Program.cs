@@ -1,52 +1,106 @@
-﻿    using demo_oop_4;
- namespace demo_oop_4 {
-    public class Program
+﻿//ASSI 4 OOP
+#region part 1
+#region q1
+//b) To define a blueprint for a class
+#endregion
+
+#region q2
+//a) private
+
+#endregion
+
+#region q3
+//b) No
+#endregion
+#region q4
+//b) Yes, interfaces can inherit from multiple interfaces
+#endregion
+
+#region q5
+//d) implements
+#endregion
+
+#region q6
+//a) Yes
+#endregion
+
+#region q7
+//b) No, all members are implicitly public
+#endregion
+
+#region q8
+//b) To provide a clear separation between interface and class members
+#endregion
+
+#region q9
+//b) No, interfaces cannot have constructors
+
+#endregion
+
+#region q10
+//c) By separating interface names with commas
+#endregion
+#endregion
+
+
+#region part2
+#region q1
+internal interface Ishape
+{
+    double area { get; set; }
+    void DisplayShapeInfo();
+}
+
+internal interface IRectangle : Ishape
+{
+}
+
+internal interface ICircle : Ishape
+{
+}
+
+
+internal class circle : ICircle
+{
+    public double area { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    public void DisplayShapeInfo()
     {
-        //public static void print10num(seriesbytwo series)
-        //{
-        //    if (series != null)
-        //    {
-        //        for (int i = 0; i < 10; i++)
-        //        {
-        //            Console.WriteLine(series.current);
-        //            series.getnext();
-        //        }
-        //    }
-        //}
-        static void Main(string[] args)
-        {
-            //Mytype mytype1 = new Mytype();
-            //mytype1.id = 25;
-            //mytype1.myfun(12);
-            //----------------------------
-        //    seriesbytwo seriesbytwo1 = new seriesbytwo();
-        //    print10num(seriesbytwo1);
-        
-          // ========  shallow & deep copy ========= 
-    //      int[] arr1= { 1, 2, 3 };
-    //        int[] arr2 = new int[3];
-    //        Console.WriteLine(arr2.GetHashCode());
-    //        Console.WriteLine(arr1.GetHashCode());
+        throw new NotImplementedException();
+    }
+}
 
-    //        arr2 = arr1;
-    //        Console.WriteLine(arr2[0]);
-    //        arr1[0] = 6;
-    //        Console.WriteLine($"------------ {arr2[0]}");
+internal class Rectangle : IRectangle
+{
+    public double area { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+    public void DisplayShapeInfo()
+    {
+        throw new NotImplementedException();
+    }
+}
 
-    //        Console.WriteLine(arr2.GetHashCode());
-    //        Console.WriteLine(arr1.GetHashCode());
+#endregion
 
-    //        Console.WriteLine("deep copy");
-            
-    //        arr2 = (int[]) arr1.Clone();
-    //        Console.WriteLine(arr2.GetHashCode());
-    //        Console.WriteLine(arr1.GetHashCode());
-    //        Console.WriteLine("set arr1[0] = 8 ");
-    //        arr1[0] = 8;
-    //        Console.WriteLine($"---------arr2[0] = {arr2[0]}");
-            
+#region q2
+public interface IAuthenticationService
+{
+    bool AuthorizeUser(string name, string password);
+    bool AuthenticateUser(string username, string password);
 
-    //    }
-    //}
-    //    }
+}
+internal class BasicAuthenticationService : IAuthenticationService
+{
+    public bool AuthenticateUser(string username, string password)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool AuthorizeUser(string name, string password)
+    {
+        throw new NotImplementedException();
+    }
+}
+#endregion
+
+#endregion
